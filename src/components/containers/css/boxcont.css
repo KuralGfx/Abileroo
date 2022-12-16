@@ -1,0 +1,24 @@
+.box{
+    height: 70px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    margin-left: 20px;
+    
+}
+
+
+.buttonshop{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+    width: 100%;
+    height: 100px;
+    background-color: #ffffffa4;
+}
+
+.freccia{
+    padding-top: 16px;
+    color: rgb(0, 0, 0);
+    align-content: right;
+    
+}
