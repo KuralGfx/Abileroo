@@ -1,4 +1,5 @@
 import React from "react";
+import SplitButton from "./components/NavDropComponent";
 import HomePage from "./components/pages/HomePage";
 
 
@@ -6,8 +7,8 @@ import HomePage from "./components/pages/HomePage";
 function App() {
   return (
     <>
-        <HomePage/>
-       
+    
+    <HomePage/>
     </>
   );
 }

@@ -18,12 +18,12 @@ code {
 }
 
 ::-webkit-scrollbar-track{
-  background: #ff7b00;
+  background: #000000;
   
 }
 
 ::-webkit-scrollbar-thumb{
-  background: black;
+  background: #ff7b00;
   border-radius: 10px;
   
   

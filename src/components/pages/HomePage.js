@@ -1,12 +1,12 @@
-import Home from "../containers/Home";
-import NavBar from "../containers/Home";
+import HomeContainer from "../containers/HomeContainer";
+
 
 
 const HomePage = () =>{
   
     return (
         <>
-          <Home/>
+          <HomeContainer/>
         </>
     )
   };
