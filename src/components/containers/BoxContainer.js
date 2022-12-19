@@ -9,7 +9,7 @@ function BoxContainer(props){
     const {title} = props;
     return(
             <button className="buttonshop">
-            <h1 className="box">{title} </h1>
+            <h1 className="box">{title}</h1>
             <ArrowForwardIosIcon className="freccia"/>
             </button>
             

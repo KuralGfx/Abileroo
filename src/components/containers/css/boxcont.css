@@ -1,6 +1,6 @@
 .box{
     height: 70px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-align: left;
     margin-left: 20px;
     
@@ -10,10 +10,13 @@
 .buttonshop{
     display: flex;
     justify-content: space-between;
-    padding-top: 16px;
+    padding-top: 10px;
     width: 100%;
-    height: 100px;
-    background-color: #ffffffa4;
+    height: 90px;
+    background-color: #ce6e00af;
+    box-shadow: 2px 4px 2px rgb(255, 123, 0);
+    
+    
 }
 
 .freccia{

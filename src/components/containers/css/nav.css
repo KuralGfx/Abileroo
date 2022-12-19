@@ -1,0 +1,19 @@
+.search{
+    
+    width: 100%;
+    height: 40px;
+    box-shadow: 2px 3px 2px rgb(255, 94, 0);
+    border-radius: 10px;
+}
+
+.logo{
+    background-image: url('https://cdn.discordapp.com/attachments/963899883201388594/1053697337807077447/Cattura.PNG');
+    padding: 20px;
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    background-size: cover;
+    box-shadow: 2px 3px rgb(255, 123, 0);
+    
+   
+    
+}

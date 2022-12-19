@@ -3,7 +3,6 @@ export const CardId = [
      
       id:"1",
       title:"Burger King",
-    
     },
 
     {
@@ -31,6 +30,30 @@ export const CardId = [
     {
         id:"6",
         title:"S'incontru",
-        
       },
+      ,
+    {
+        id:"7",
+        title:"Giangol Tao",
+      },
+      ,
+    {
+        id:"8",
+        title:"Palm Beach",
+      },
+      
+    {
+        id:"9",
+        title:"La Lanterna",
+      },
+      {
+        id:"10",
+        title:"Le 2 Isole",
+      },
+
+      {
+        id:"11",
+        title:"Da Cesare",
+      },
+      
  ];

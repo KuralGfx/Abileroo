@@ -1,13 +1,12 @@
-import BoxComponent from "../BoxComponent";
-import NavBar from "../containers/NavBar";
+import Home from "../containers/Home";
+import NavBar from "../containers/Home";
 
 
 const HomePage = () =>{
   
     return (
         <>
-          <NavBar/>
-          <BoxComponent/>
+          <Home/>
         </>
     )
   };
