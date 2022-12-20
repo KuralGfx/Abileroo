@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CardId } from "../array/CardId";
 import BoxContainer from "./BoxContainer";
 import '../containers/css/nav.css'
@@ -7,7 +7,7 @@ import SearchInput from "../InputSearch";
 import NavDropDown from "../NavDropComponent";
 
 export default function HomeContainer() {
-
+    const[selected, setSelected] = useState(CardId)
     const [result, setResult] = useState(CardId);
     
 
@@ -20,20 +20,15 @@ export default function HomeContainer() {
        
     }
 
-   
 
-    const handleOrder = () =>{
+    useEffect(()=>
+    {
+        const Crescente = CardId.sort((a, z) => (z.title > a.title) ? 1 : -1 )       
+        
+        
+    } 
+    , [selected] )
 
-        const ascOrder= CardId.title.sort
-        const ascResult = CardId.sort((a, z) => (a.title > z.title) ? 1 : -1 (ascOrder))
-
-        const decOrder= CardId.title.sort
-        const decResult = CardId.sort((a, z) => (z.title > a.title) ? 1 : -1 (decOrder))
-
-        setResult(ascResult)
-
-        setResult(decResult)
-    }
 
     return (
         <div>
@@ -41,9 +36,10 @@ export default function HomeContainer() {
                 leroo
                 <SearchInput onChange={handleSearch}/>
                 <div className="container-drop">
-                <NavDropDown onChange={handleOrder}/>
+                <NavDropDown setSelected={setSelected} />
                 </div>
                 </h1>
+                
             {result?.map((CardId) => (
                 <BoxContainer title={CardId.title}  />
             ))}

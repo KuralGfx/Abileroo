@@ -17,7 +17,7 @@
     width: 100%;
     font-size: 20px;
     display: flex;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.685);
+    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.685);
     justify-content: space-between; 
     
 
@@ -37,7 +37,7 @@
     
     width: 131px;
     padding: 15px;
-    background: rgb(212, 103, 0);
+    background: rgb(255, 136, 0);
     font-size: 17px;
     padding: 15px 20px;
     border: 20px rgb(255, 255, 255);
@@ -47,7 +47,7 @@
     font-weight: 300;
     color: rgb(255, 255, 255);
     margin-top: 2px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.685);
+    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.685);
 }
 
 .dropdown .dropdown-content .dropdown-item{
