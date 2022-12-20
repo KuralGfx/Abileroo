@@ -1,28 +1,27 @@
-import React, { useState } from "react";
-import './containers/css/navdrop.css'
-export default function NavDropDown(setSelected){
+import React, { useState} from "react";
+import './containers/css/navdrop.css';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
+
+
+export default function NavDropDown(onChange){
     const[isActive, setIsActive] = useState(false)
-    const options =['Crescente' , 'Decrescente']
+    
+   
+    
     return(
-        <div className="dropdown" onClick={(e)=> 
+        <div className="dropdown" onClick={()=> 
             setIsActive(!isActive)}>
             <div className="dropdown-btn" >
                 Ordina per:
+                <ArrowDropDownIcon className="order"/>
                 <span className="fas fa-caret-down"></span>
                 </div>
                   {isActive && (
                      <div className="dropdown-content">
-                        {options.map((option) =>(
-                            <div onClick={e => {
-                                setSelected(option)
-                                setIsActive(false)
-                            }}
-                        className="dropdown-item" 
-                        >
-                            {option}
-                        </div>
-                        ))}
-                 </div>
+                        <button onChange={onChange}>Crescente</button>
+                        <button onChange={onChange}>Decrescente</button>
+                    </div>               
                   )} 
             </div>
     );

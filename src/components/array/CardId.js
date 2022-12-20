@@ -1,3 +1,4 @@
+/* eslint-disable no-sparse-arrays */
 export const CardId = [
   {
      
@@ -63,4 +64,3 @@ export const CardId = [
     },
 
 ]
-CardId.sort((a, z) => (a.title > z.title) ? 1 : -1)
