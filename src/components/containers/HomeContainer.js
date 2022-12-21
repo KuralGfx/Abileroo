@@ -38,7 +38,6 @@ export default function HomeContainer() {
              case "Casuale":
             res = CardId.sort(() => 0.5 - Math.random()).filter(n => n.title.includes(''));
             break;           
-      
         }
 
 
