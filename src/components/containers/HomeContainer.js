@@ -53,10 +53,10 @@ export default function HomeContainer() {
 
     return (
         <div>
-            <NavBar className="logo"/>
-            <div className="search-bar">
+            <NavBar/>
+           
             <SearchInput onChange={handleSearch}/>
-            </div>
+            
                 <div className="container-drop">
                 <NavDropDown setSelected={handleOrder} selected={selected} />
                 </div>

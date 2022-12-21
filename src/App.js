@@ -1,14 +1,14 @@
 import React from "react";
-import HomePage from "./components/pages/HomePage";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./routers/Router";
 
 
 
 function App() {
   return (
-    <>
-    
-    <HomePage/>
-    </>
+    <BrowserRouter>
+    <Router/>
+    </BrowserRouter>
   );
 }
 
