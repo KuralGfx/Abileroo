@@ -1,5 +1,6 @@
+/* eslint-disable default-case */
 /* eslint-disable jsx-a11y/alt-text */
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { CardId } from "../array/CardId";
 import BoxContainer from "./BoxContainer";
 import '../containers/css/nav.css'
@@ -8,7 +9,7 @@ import NavDropDown from "../NavDropComponent";
 
 
 export default function HomeContainer() {
-    const[selected,setSelected] = useState("")
+    const[selected] = useState("")
     const [result, setResult] = useState(CardId);
     
 
@@ -21,32 +22,32 @@ export default function HomeContainer() {
        
     }
 
-    const handleOrder = () => {
+    const handleOrder = (value) => {
+    
         let res = result;
-        if (selected === "a-z"){
+        
+        switch(value){
+            case "a-z": 
+             res = result.sort((a,b) => (b.title > a.title) ? 1 : - 1);
+            break;
 
-            res = CardId.sort((a,b) => (b.title > a.title) ? 1 : - 1);
-            
-        } 
-
-        else if (selected === "z-a") {
-
-             res = CardId.sort((a,b) => (b.title < a.title) ? 1 : -1);
-                       
-        } 
-
-        else { if (selected === "Casuale"){
-            res = CardId.sort(() => 0.5 - Math.random());
+             case "z-a":
+             res = result.sort((a,b) => (b.title < a.title) ? 1 : -1);
+             break;
+             
+             case "Casuale":
+            res = CardId.sort(() => 0.5 - Math.random()).filter(n => n.title.includes(''));
+            break;           
       
-        }}
+        }
 
 
         setResult(res);       
     }
 
-    useEffect(()=> {
+    /*useEffect(()=> {
         handleOrder()
-        },[selected])
+        },[selected])*/
 
     return (
         <div>
@@ -54,7 +55,7 @@ export default function HomeContainer() {
                 leroo
                 <SearchInput onChange={handleSearch}/>
                 <div className="container-drop">
-                <NavDropDown setSelected={setSelected} selected={selected} />
+                <NavDropDown setSelected={handleOrder} selected={selected} />
                 </div>
                 </h1>
                 

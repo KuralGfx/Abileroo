@@ -7,7 +7,7 @@ const SearchInput = ({onChange}) => {
     <div>
       <input
         className="search"
-        placeholder= "esempio: Burger King"
+        placeholder= "Cerca:"
         onChange={onChange}
 
       />
