@@ -3,13 +3,19 @@ export const CardId = [
   {
      
     id:'0',
-    title:'Angelo Pizzeria',
-    description: {href:'link', address: 'via' , list_product:[{name: 'nome prodotto'}, {name: 'nome prodotto2'} ] }
+    title:'Burger King',
+    description: {href:'https://azfranchising.com/wp-content/uploads/2019/11/burger-king-1030x684.jpg',
+     address: 'Via Scala Sa Perda, 1080 ' ,
+      list_product:
+      [{name: 'Hambuerger'},
+       {name: 'Coca Cola'} 
+      ] 
+    }
   },
   {
      
     id:'1',
-    title:'Burger King',
+    title:'Angelo Pizzeria',
     description: {href:'link', address: 'via' , list_product:[{name: 'nome prodotto'}, {name: 'nome prodotto2'} ] }
   },
 

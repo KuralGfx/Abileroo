@@ -3,7 +3,8 @@
 import {  useState } from "react";
 import { CardId } from "../array/CardId";
 import BoxContainer from "./BoxContainer";
-import '../containers/css/nav.css'
+
+import '../styles/nav.css'
 import SearchInput from "../InputSearch";
 import NavDropDown from "../NavDropComponent";
 import NavBar from "../NavBar";

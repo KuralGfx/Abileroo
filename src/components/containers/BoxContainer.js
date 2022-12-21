@@ -1,5 +1,5 @@
 import React from "react";
-import './css/boxcont.css';
+import '../styles/boxcont.css'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
