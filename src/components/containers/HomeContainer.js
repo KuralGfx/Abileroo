@@ -6,8 +6,9 @@ import '../containers/css/nav.css'
 import SearchInput from "../InputSearch";
 import NavDropDown from "../NavDropComponent";
 
+
 export default function HomeContainer() {
-    const[selected, setSelected] = useState(CardId)
+    const[selected,setSelected] = useState("")
     const [result, setResult] = useState(CardId);
     
 
@@ -20,15 +21,32 @@ export default function HomeContainer() {
        
     }
 
+    const handleOrder = () => {
+        let res = result;
+        if (selected === "a-z"){
 
-    useEffect(()=>
-    {
-        const Crescente = CardId.sort((a, z) => (z.title > a.title) ? 1 : -1 )       
-        
-        
-    } 
-    , [selected] )
+            res = CardId.sort((a,b) => (b.title > a.title) ? 1 : - 1);
+            
+        } 
 
+        else if (selected === "z-a") {
+
+             res = CardId.sort((a,b) => (b.title < a.title) ? 1 : -1);
+                       
+        } 
+
+        else { if (selected === "Casuale"){
+            res = CardId.sort(() => 0.5 - Math.random());
+      
+        }}
+
+
+        setResult(res);       
+    }
+
+    useEffect(()=> {
+        handleOrder()
+        },[selected])
 
     return (
         <div>
@@ -36,12 +54,12 @@ export default function HomeContainer() {
                 leroo
                 <SearchInput onChange={handleSearch}/>
                 <div className="container-drop">
-                <NavDropDown setSelected={setSelected} />
+                <NavDropDown setSelected={setSelected} selected={selected} />
                 </div>
                 </h1>
                 
             {result?.map((CardId) => (
-                <BoxContainer title={CardId.title}  />
+                <BoxContainer title={CardId.title}/>
             ))}
         </div>
     );
