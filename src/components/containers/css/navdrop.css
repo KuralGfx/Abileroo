@@ -7,8 +7,8 @@
 }
 
 .dropdown .dropdown-btn{
-    padding: 4px 10px;
-    background: rgba(255, 136, 0, 0.733);
+    padding: 5px 10px;
+    background: rgb(190, 102, 0);
     box-shadow: 2px 2px black;
     font-weight: bold;
     color: rgb(255, 255, 255);
@@ -17,8 +17,9 @@
     width: 100%;
     font-size: 20px;
     display: flex;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.685);
+ 
     justify-content: space-between; 
+    
     
 
     

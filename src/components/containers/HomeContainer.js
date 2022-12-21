@@ -6,10 +6,11 @@ import BoxContainer from "./BoxContainer";
 import '../containers/css/nav.css'
 import SearchInput from "../InputSearch";
 import NavDropDown from "../NavDropComponent";
+import NavBar from "../NavBar";
 
 
 export default function HomeContainer() {
-    const[selected] = useState("")
+    const[selected, setSelected] = useState("")
     const [result, setResult] = useState(CardId);
     
 
@@ -25,18 +26,23 @@ export default function HomeContainer() {
     const handleOrder = (value) => {
     
         let res = result;
-        
+        setSelected(value)
+        console.log(value)
         switch(value){
             case "a-z": 
-             res = result.sort((a,b) => (b.title > a.title) ? 1 : - 1);
+             res = result.sort((a,b) => (b.title < a.title) ? 1 : - 1);
+             console.log(res)
             break;
 
              case "z-a":
-             res = result.sort((a,b) => (b.title < a.title) ? 1 : -1);
+             res = result.sort((a,b) => (b.title > a.title) ? 1 : -1);
+             console.log(res)
              break;
              
              case "Casuale":
             res = CardId.sort(() => 0.5 - Math.random()).filter(n => n.title.includes(''));
+            break;
+            default: res = CardId
             break;           
         }
 
@@ -44,19 +50,17 @@ export default function HomeContainer() {
         setResult(res);       
     }
 
-    /*useEffect(()=> {
-        handleOrder()
-        },[selected])*/
 
     return (
         <div>
-            <h1 className="logo"><img src='https://cdn.discordapp.com/attachments/963899883201388594/1053401587206328410/ABILEROO.png' width={'40px'} />
-                leroo
-                <SearchInput onChange={handleSearch}/>
+            <NavBar className="logo"/>
+            <div className="search-bar">
+            <SearchInput onChange={handleSearch}/>
+            </div>
                 <div className="container-drop">
                 <NavDropDown setSelected={handleOrder} selected={selected} />
                 </div>
-                </h1>
+            
                 
             {result?.map((CardId) => (
                 <BoxContainer title={CardId.title}/>
