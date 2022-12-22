@@ -9,7 +9,7 @@
 .dropdown .dropdown-btn{
     padding: 5px 10px;
     background: rgb(190, 102, 0);
-    box-shadow: 2px 2px black;
+    margin: 3px;
     font-weight: bold;
     color: rgb(255, 255, 255);
     display: block;
@@ -36,7 +36,7 @@
 
 .dropdown .dropdown-content{
     
-    width: 170px;
+    width: 172px;
     padding: 15px;
     background: rgba(255, 136, 0, 0.822);
     font-size: 17px;

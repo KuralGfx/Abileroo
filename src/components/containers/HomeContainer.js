@@ -3,17 +3,23 @@
 import {  useState } from "react";
 import { CardId } from "../array/CardId";
 import BoxContainer from "./BoxContainer";
-
 import '../styles/nav.css'
 import SearchInput from "../InputSearch";
 import NavDropDown from "../NavDropComponent";
 import NavBar from "../NavBar";
+import { useNavigate } from "react-router-dom";
 
 
 export default function HomeContainer() {
     const[selected, setSelected] = useState("")
     const [result, setResult] = useState(CardId);
-    
+    //const onClickOption = useNavigate(`/shop/${CardId}`, { replace: true });
+    const navigate = useNavigate();
+
+
+    const onClickOption =(id) =>{
+        navigate(`/shop/${id}`, { replace: true })
+    }
 
     const handleSearch = (e) => {
 
@@ -64,7 +70,7 @@ export default function HomeContainer() {
             
                 
             {result?.map((CardId) => (
-                <BoxContainer title={CardId.title}/>
+                <BoxContainer title={CardId.title} onClick= {()=> onClickOption(CardId.id) }/>
             ))}
         </div>
     );

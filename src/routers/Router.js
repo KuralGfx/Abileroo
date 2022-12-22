@@ -7,7 +7,7 @@ import Shop from "../components/pages/Shop";
 function Router(){
     return (<Routes>
     <Route exact path="/" element={<HomePage/>}/>
-    <Route path="shop" element={<Shop/>}/>  
+    <Route path="/shop/:id" element={<Shop/>}/>  
   </Routes>
     )
 }
