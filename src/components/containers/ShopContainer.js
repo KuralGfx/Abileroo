@@ -3,7 +3,7 @@ import '../styles/cardbox.css'
 import React from 'react';
 import NavBar from "../NavBar";
 import { CardId } from "../array/CardId";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 
@@ -14,6 +14,7 @@ const Shop = () =>{
     return<>
         <NavBar/>
         <div className="card-container">
+
             <img className="image-card" src={card.description.href}></img>
         
             <div className="title-card"><h1> {card.title}</h1></div>
@@ -28,14 +29,16 @@ const Shop = () =>{
             <div className="title-products"><h1>Prodotti</h1></div>
 
             <div className='box-products'>
-            {card.description.list_product.name}
+            Hambuerger
             </div>
-            
-                
-        </div>
-        
 
-    
+            <Link to="/">
+                <button type="button" className='back-button'>
+                    Back
+                    </button>
+                    </Link>
+            </div>
+
     </>
 }
 
