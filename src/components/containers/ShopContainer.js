@@ -9,32 +9,26 @@ import { useParams } from "react-router-dom";
 
 const Shop = () =>{
     const {id}= useParams();
-    console.log(id)
-       
-    const testid = 1
-
-    let data = CardId[id]
+    let card = CardId.find(x => x.id === id)
 
     return<>
-        
         <NavBar/>
-        
         <div className="card-container">
-            <img className="image-card" src={data.description.href}></img>
+            <img className="image-card" src={card.description.href}></img>
         
-            <div className="title-card"><h1> {data.title}</h1></div>
+            <div className="title-card"><h1> {card.title}</h1></div>
 
-            <div className="Via-card"><h3>{data.description.address}</h3></div>
+            <div className="Via-card"><h3>{card.description.address}</h3></div>
 
             <div className="description">
                 <h3>
-                {data.description.detail}.       
+                {card.description.detail}.       
                 </h3>     
             </div>
             <div className="title-products"><h1>Prodotti</h1></div>
 
             <div className='box-products'>
-            
+            {card.description.list_product.name}
             </div>
             
                 
