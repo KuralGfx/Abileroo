@@ -7,12 +7,12 @@
 }
 
 .logo{
-    background-image: url('https://images.creativemarket.com/0.1.0/ps/7065029/910/483/m2/fpnw/wm1/fskqsdmhcmtrnadgcmunaflw1nh5tavkkv3n4kztdzp8kbz3mdyso1yajjfq2c1o-.jpg?1569963940&s=f8f5433ed2e0ce056df59d304a3daf0b&fmt=webp');
+    background-image: url('https://img.freepik.com/premium-photo/black-stone-food-background-vegetables-spices-black-old-table_187166-9025.jpg?w=1380');
     padding: 20px;
     margin: 0px;
     color: rgb(255, 255, 255);
     background-size: cover;
-    box-shadow: 2px 3px rgb(0, 0, 0);
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
     
    
     
@@ -25,7 +25,7 @@
 }
 
 .search-bar{
-    background-color: black;
+    background-color: transparent;
     padding-right: 20px;
     padding-left: 10px;
     padding-top: 10px;
