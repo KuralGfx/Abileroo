@@ -1,4 +1,4 @@
-/* eslint-disable no-sparse-arrays */
+
 export const CardId = [
   {
      
@@ -7,10 +7,7 @@ export const CardId = [
     description: {href:'https://azfranchising.com/wp-content/uploads/2019/11/burger-king-1030x684.jpg',
      address: 'Via Scala Sa Perda, 82 ' ,
      detail: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
-      list_product:
-      [{name: 'Hambuerger'},
-       {name: 'Coca Cola'} 
-      ] 
+      list_product: [{name: 'Panino'}, {name: 'Coca Cola'}] 
     }
   },
   {
@@ -21,8 +18,8 @@ export const CardId = [
      address: 'Via  Artigianato, 10' ,
      detail: ' Ipsum as their default model text, and a search for will uncover many web sites ',
       list_product:
-      [{name: 'nome prodotto'},
-       {name: 'nome prodotto2'} 
+      [{name: 'Sprit'},
+       {name: 'Panino'} 
       ] 
     }
   },
@@ -34,8 +31,8 @@ export const CardId = [
      address: 'Via San Saturnino, 21' ,
      detail: 'orem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" The Extrem',
       list_product:
-      [{name: 'nome prodotto'},
-       {name: 'nome prodotto2'}
+      [{name: 'Patatine fritte'},
+       {name: 'Big Mc'}
        ] 
       }
     
@@ -48,8 +45,8 @@ export const CardId = [
      address: 'Via Sonnino, 83' ,
      detail: 'Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied',
       list_product:
-      [{name: 'nome prodotto'},
-       {name: 'nome prodotto2'} 
+      [{name: 'Shuriake'},
+       {name: 'Bacchette'} 
       ] 
     }
   },
@@ -61,8 +58,8 @@ export const CardId = [
      address: 'Via Efisio, 50' ,
      detail: 'orem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum de Finibus Bonorum et Malor"',
       list_product:
-      [{name: 'nome prodotto'},
-       {name: 'nome prodotto2'} 
+      [{name: 'Margherita'},
+       {name: 'Napoletana'} 
       ] 
     }
    
@@ -74,8 +71,8 @@ export const CardId = [
      address: 'Via San Bernardo 23' ,
      detail: 'orem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum ections 1.10.32 and 1.10.33"',
       list_product:
-      [{name: 'nome prodotto'},
-       {name: 'nome prodotto2'}
+      [{name: 'Birra'},
+       {name: 'Caffè'}
        ] 
       }
   },
@@ -87,8 +84,8 @@ export const CardId = [
        address: 'Via Amadeo,65' ,
        detail: 'de Finibus Bonorum et de Finibus Bonorum et Malor de Finibus Bonorum et Malor Malor',
         list_product:
-        [{name: 'nome prodotto'},
-         {name: 'nome prodotto2'} 
+        [{name: 'Diavola'},
+         {name: 'Vegetariana'} 
         ] 
       }
     },
@@ -100,8 +97,8 @@ export const CardId = [
        address: 'Via Pescara, 82' ,
        detail: 'de Finibus Bonorum et Malorde Finibus Bonorum et Malor de Finibus Bonorum et Malor',
         list_product:
-        [{name: 'nome prodotto'},
-         {name: 'nome prodotto2'} 
+        [{name: 'Forchette'},
+         {name: 'Salsa Teriaki'} 
         ] 
       }
     },

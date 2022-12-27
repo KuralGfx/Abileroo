@@ -10,7 +10,7 @@ import { Link, useParams } from "react-router-dom";
 const Shop = () =>{
     const {id}= useParams();
     let card = CardId.find(x => x.id === id)
-
+    
     return<>
         <NavBar/>
         <div className="card-container">
@@ -26,10 +26,10 @@ const Shop = () =>{
                 {card.description.detail}.       
                 </h3>     
             </div>
-            <div className="title-products"><h1>Prodotti</h1></div>
+            <div className="title-products"><h1>Product</h1></div>
 
             <div className='box-products'>
-            Hambuerger
+            {card.description.list_product.map((product) => (<div>{product.name}</div>))}
             </div>
 
             <Link to="/">
