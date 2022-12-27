@@ -1,6 +1,4 @@
-/* eslint-disable default-case */
-/* eslint-disable jsx-a11y/alt-text */
-import {  useState } from "react";
+import {  useState} from "react";
 import { CardId } from "../array/CardId";
 import BoxContainer from "./BoxContainer";
 import '../styles/nav.css'
@@ -8,13 +6,20 @@ import SearchInput from "../InputSearch";
 import NavDropDown from "../NavDropComponent";
 import NavBar from "../NavBar";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import useSWR  from "swr";
+
+
+const fetcher = url => axios.get(url).then(res => res.data)
 
 
 export default function HomeContainer() {
     const[selected, setSelected] = useState("")
     const [result, setResult] = useState(CardId);
-    //const onClickOption = useNavigate(`/shop/${CardId}`, { replace: true });
     const navigate = useNavigate();
+
+    const { data, error, isLoading } = useSWR( `${process.env.REACT_APP_BASE_URL}/shops/`, fetcher)
+    console.log(data, error,  isLoading)
 
 
     const onClickOption =(id) =>{
@@ -33,9 +38,11 @@ export default function HomeContainer() {
     const handleOrder = (value) => {
     
         let res = result;
+
         setSelected(value)
-        console.log(value)
+
         switch(value){
+
             case "a-z": 
              res = result.sort((a,b) => (b.title < a.title) ? 1 : - 1);
              console.log(res)
@@ -59,7 +66,11 @@ export default function HomeContainer() {
 
 
     return (
+
+        
+
         <div>
+            
             <NavBar/>
            
             <SearchInput onChange={handleSearch}/>
@@ -67,11 +78,12 @@ export default function HomeContainer() {
                 <div className="container-drop">
                 <NavDropDown setSelected={handleOrder} selected={selected} />
                 </div>
-            
-                
+    
             {result?.map((CardId) => (
-                <BoxContainer title={CardId.title} onClick= {()=> onClickOption(CardId.id) }/>
+                <BoxContainer key={CardId.id} title={CardId.title} onClick= {()=> onClickOption(CardId.id) }/>
+
             ))}
+
         </div>
     );
 } 
