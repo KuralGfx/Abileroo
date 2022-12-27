@@ -26,10 +26,10 @@ const Shop = () =>{
                 {card.description.detail}.       
                 </h3>     
             </div>
-            <div className="title-products"><h1>Product</h1></div>
+            <div className="title-products"><h1>Prodotti</h1></div>
 
             <div className='box-products'>
-            {card.description.list_product.map((product) => (<div>{product.name}</div>))}
+            {card.description.list_product.map((product) => (<li>{product.name}</li>))}
             </div>
 
             <Link to="/">
