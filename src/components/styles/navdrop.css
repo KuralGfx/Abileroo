@@ -9,9 +9,9 @@
 .dropdown .dropdown-btn{
     padding: 5px 10px;
     background: rgb(255, 136, 0);
-    margin: 3px;
+    
     font-weight: bold;
-    color: rgb(7, 0, 0);
+    color: rgb(255, 255, 255);
     display: block;
     align-items: center;
     width: 100%;
@@ -30,25 +30,23 @@
 
 .order{
     padding-top: 5px;
-    padding-left: 10px;
+    padding-left: 7px;
     padding-right: 0;
 }
 
 .dropdown .dropdown-content{
     
-    width: 103px;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.733);
-    font-size: 14px;
-    padding: 18px 20px;
-    border: 40px rgb(255, 255, 255);
+    width: 120px;
+    padding: 16px;
+    background: rgb(255, 136, 0);
+    font-size: 20px;
+    padding: 2px 20px;
     border-radius: 0  0  20px 20px ;
     z-index: 1;
     position: absolute;
-    font-weight: 300;
     color: rgb(255, 255, 255);
     margin-top: 2px;
-    box-shadow: 2px 2px 2px 2px rgb(255, 123, 0);
+    
 }
 
 .dropdown .dropdown-content .dropdown-item{
