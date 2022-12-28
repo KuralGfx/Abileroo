@@ -15,12 +15,10 @@ const fetcher = url => axios.get(url).then(res => res.data)
 
 export default function HomeContainer() {
     const[selected, setSelected] = useState("")
-    const [result, setResult] = useState(CardId);
+    const [result, setResult] = useState();
     const navigate = useNavigate();
 
-    const { data, error, isLoading } = useSWR( `${process.env.REACT_APP_BASE_URL}/shops/`, fetcher)
-    console.log(data, error,  isLoading)
-
+    const { data } = useSWR( `${process.env.REACT_APP_BASE_URL}/shops/`, fetcher)
 
     const onClickOption =(id) =>{
         navigate(`/shop/${id}`, { replace: true })
@@ -29,7 +27,7 @@ export default function HomeContainer() {
     const handleSearch = (e) => {
 
         const searchValue = e.target.value.toLowerCase()
-        const searchResult = CardId.filter((card) => card.title.toLowerCase().includes(searchValue))
+        const searchResult = data.filter((item) => item.name.toLowerCase().includes(searchValue))
         
         setResult(searchResult)
        
@@ -44,19 +42,19 @@ export default function HomeContainer() {
         switch(value){
 
             case "a-z": 
-             res = result.sort((a,b) => (b.title < a.title) ? 1 : - 1);
-             console.log(res)
+             res = data.sort((a,b) => (b.name < a.name) ? 1 : - 1);
+             
             break;
 
              case "z-a":
-             res = result.sort((a,b) => (b.title > a.title) ? 1 : -1);
-             console.log(res)
+             res = data.sort((a,b) => (b.name > a.name) ? 1 : -1);
+             
              break;
              
              case "Casuale":
-            res = CardId.sort(() => 0.5 - Math.random()).filter(n => n.title.includes(''));
+            res = data.sort(() => 0.5 - Math.random()).filter(n => n.name.includes(''));
             break;
-            default: res = CardId
+            
             break;           
         }
 
@@ -79,8 +77,8 @@ export default function HomeContainer() {
                 <NavDropDown setSelected={handleOrder} selected={selected} />
                 </div>
     
-            {result?.map((CardId) => (
-                <BoxContainer key={CardId.id} title={CardId.title} onClick= {()=> onClickOption(CardId.id) }/>
+            {data?.map((item) => (
+                <BoxContainer key={item.id} title={item.name} onClick= {()=> onClickOption(item.id) }/>
 
             ))}
 
