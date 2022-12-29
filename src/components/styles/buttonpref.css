@@ -1,0 +1,12 @@
+.button-pref{
+    background-color: rgb(255, 136, 0);
+    border-radius: 100px;
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    margin-top: 64px;
+    margin-left: 12px;
+    color: white;
+    justify-content: right;
+    
+}

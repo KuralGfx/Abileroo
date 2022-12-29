@@ -8,6 +8,8 @@ import NavBar from "../NavBar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useSWR  from "swr";
+import LikeButton from "../PreferButton";
+
 
 const fetcher = url => axios.get(url).then(res => res.data)
 
@@ -70,14 +72,16 @@ export default function HomeContainer() {
     return (
 
         <div>
-            
+            <LikeButton/>
             <NavBar/>
-           
+            
             <SearchInput onChange={handleSearch}/>
             
                 <div className="container-drop">
                 <NavDropDown handleOrder={handleOrder} selected={selected} />
+                
                 </div>
+             
                 {result?.map((item) => (
                 <BoxContainer key={item.id} title={item.name} onClick= {()=> onClickOption(item.id) }/>))}
                 
