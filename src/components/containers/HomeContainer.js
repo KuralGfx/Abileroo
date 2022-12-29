@@ -33,32 +33,34 @@ export default function HomeContainer() {
 
     const handleOrder = (value) => {
     
-        setSelected(value);
-
-        switch(value){
-            
-            case "a-z":
-                axios.get(`${process.env.REACT_APP_BASE_URL}/shops/?ordering=name`)
-                .then((res)=> setResult(res.data))
-                
-            break;
-
-             case "z-a":
-                axios.get(`${process.env.REACT_APP_BASE_URL}/shops/?ordering=-name`)
-                .then((res)=> setResult(res.data))
-                
-             break;
-             
-             case "Casual":
-                axios.get(`${process.env.REACT_APP_BASE_URL}/shops/`)
-                .then((res)=> setResult(res.data))
-            
-            break;
-                   
-        }
-     
+        setSelected(selected);
+       
+        axios.get(`${process.env.REACT_APP_BASE_URL}/shops/${value}`)
+                .then((res)=> setResult(res.data));
     }
 
+   // switch(value){
+            
+        //     case "a-z":
+        //         axios.get(`${process.env.REACT_APP_BASE_URL}/shops/?ordering=name`)
+        //         .then((res)=> setResult(res.data))
+                
+        //     break;
+
+        //      case "z-a":
+        //         axios.get(`${process.env.REACT_APP_BASE_URL}/shops/?ordering=-name`)
+        //         .then((res)=> setResult(res.data))
+                
+        //      break;
+             
+        //      case "Casual":
+        //         axios.get(`${process.env.REACT_APP_BASE_URL}/shops/`)
+        //         .then((res)=> setResult(res.data))
+            
+        //     break;
+                   
+        // }
+     
     useEffect(()=>{
         if(data!== null){
             setResult(data)
@@ -74,7 +76,7 @@ export default function HomeContainer() {
             <SearchInput onChange={handleSearch}/>
             
                 <div className="container-drop">
-                <NavDropDown   setSelected={handleOrder} selected={selected} />
+                <NavDropDown handleOrder={handleOrder} selected={selected} />
                 </div>
                 {result?.map((item) => (
                 <BoxContainer key={item.id} title={item.name} onClick= {()=> onClickOption(item.id) }/>))}

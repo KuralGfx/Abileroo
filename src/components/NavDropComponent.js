@@ -4,9 +4,12 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 
 
-export default function NavDropDown({setSelected, selected}){
+export default function NavDropDown({handleOrder, selected}){
     const[isActive, setIsActive] = useState(false)
-    const options =["a-z" , "z-a" , "Casuale"] 
+    const options =[
+        {label: 'a-z', value:'?ordering=name' } ,
+         {label: 'z-a', value:'?ordering=-name' } ,
+          {label: 'Per nome', value:'' }] 
     
     return(
         <div className="dropdown" onClick={(e)=> 
@@ -20,14 +23,14 @@ export default function NavDropDown({setSelected, selected}){
                   {isActive && (
                      <div className="dropdown-content">
                         {options.map((option) =>(
-                            <div onClick={(e) => {
-                                setSelected(option)
+                            <div onClick={() => {
+                                handleOrder(option.value)
                                 setIsActive(false)
                             
                             }}
                         className="dropdown-item" 
                         >
-                            {option}
+                            {option.label}
                         </div>
                         
                         ))}

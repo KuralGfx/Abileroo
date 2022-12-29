@@ -20,7 +20,7 @@ const Shop = () =>{
         <NavBar/>
         <div className="card-container">
 
-            <img className="image-card" src={"https://enrobax.pythonanywhere.com/"+data?.image}></img>
+            <img className="image-card" src={"https://enrobax.pythonanywhere.com/"+ data?.image}></img>
         
             <div className="title-card"><h1> {data?.name}</h1></div>
 
