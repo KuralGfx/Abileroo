@@ -1,5 +1,5 @@
-import {  useState} from "react";
-import { CardId } from "../array/CardId";
+/* eslint-disable default-case */
+import {  useEffect, useState} from "react";
 import BoxContainer from "./BoxContainer";
 import '../styles/nav.css'
 import SearchInput from "../InputSearch";
@@ -9,17 +9,15 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useSWR  from "swr";
 
-
 const fetcher = url => axios.get(url).then(res => res.data)
 
-
 export default function HomeContainer() {
-    const[selected, setSelected] = useState("")
+    const[selected, setSelected] = useState()
     const [result, setResult] = useState();
     const navigate = useNavigate();
 
     const { data } = useSWR( `${process.env.REACT_APP_BASE_URL}/shops/`, fetcher)
-
+  
     const onClickOption =(id) =>{
         navigate(`/shop/${id}`, { replace: true })
     }
@@ -35,37 +33,39 @@ export default function HomeContainer() {
 
     const handleOrder = (value) => {
     
-        let res = result;
-
-        setSelected(value)
+        setSelected(value);
 
         switch(value){
-
-            case "a-z": 
-             res = data.sort((a,b) => (b.name < a.name) ? 1 : - 1);
-             
+            
+            case "a-z":
+                axios.get(`${process.env.REACT_APP_BASE_URL}/shops/?ordering=name`)
+                .then((res)=> setResult(res.data))
+                
             break;
 
              case "z-a":
-             res = data.sort((a,b) => (b.name > a.name) ? 1 : -1);
-             
+                axios.get(`${process.env.REACT_APP_BASE_URL}/shops/?ordering=-name`)
+                .then((res)=> setResult(res.data))
+                
              break;
              
-             case "Casuale":
-            res = data.sort(() => 0.5 - Math.random()).filter(n => n.name.includes(''));
-            break;
+             case "Casual":
+                axios.get(`${process.env.REACT_APP_BASE_URL}/shops/`)
+                .then((res)=> setResult(res.data))
             
-            break;           
+            break;
+                   
         }
-
-
-        setResult(res);       
+     
     }
 
+    useEffect(()=>{
+        if(data!== null){
+            setResult(data)
+        }  
+    },[data])
 
     return (
-
-        
 
         <div>
             
@@ -74,14 +74,11 @@ export default function HomeContainer() {
             <SearchInput onChange={handleSearch}/>
             
                 <div className="container-drop">
-                <NavDropDown setSelected={handleOrder} selected={selected} />
+                <NavDropDown   setSelected={handleOrder} selected={selected} />
                 </div>
-    
-            {data?.map((item) => (
-                <BoxContainer key={item.id} title={item.name} onClick= {()=> onClickOption(item.id) }/>
-
-            ))}
-
+                {result?.map((item) => (
+                <BoxContainer key={item.id} title={item.name} onClick= {()=> onClickOption(item.id) }/>))}
+                
         </div>
     );
 } 
