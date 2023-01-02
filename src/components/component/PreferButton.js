@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/buttonpref.css';
 
-class LikeButton extends Component {
+class ButtonPrefer extends Component {
 
     constructor() {
         super();
@@ -31,5 +31,5 @@ class LikeButton extends Component {
     }
 
 
-export default LikeButton;
+export default ButtonPrefer;
     

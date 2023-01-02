@@ -31,7 +31,8 @@
  }
 
  .box-products{
-    background-color: rgba(43, 43, 43, 0.733);
+    background-color: rgba(43, 43, 43, 0.651);
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.493);
     padding: 20px;
     padding-left: 20px;
     background-image: url('');
@@ -50,43 +51,12 @@
  .back-button{
     color: rgb(255, 255, 255);
     background-color: rgb(255, 136, 0);
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-left: 15px;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 8px;
     height: 35px;
-    position: absolute;
-    margin-left: 94%; 
-    align-items: center;
+    
    
- }
-
- @media screen and (max-width: 1090px) {
-   .back-button{
-      color: rgb(255, 255, 255);
-      background-color: rgb(255, 136, 0);
-      margin-top: 30px;
-      padding-left: 30px;
-      padding-right: 30px;
-      border-radius: 8px;
-      height: 35px;
-      position: absolute;
-      margin-left: 87%; 
-     
-   }
- }
-
- @media screen and (max-width: 500px) {
-   .back-button{
-      color: rgb(255, 255, 255);
-      background-color: rgb(255, 136, 0);
-      margin-top: 30px;
-      padding-left: 30px;
-      padding-right: 30px;
-      border-radius: 8px;
-      height: 35px;
-      position: absolute;
-      margin-left: 80%; 
-     
-   }
  }

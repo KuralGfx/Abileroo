@@ -13,21 +13,16 @@ const Shop = () =>{
     const fetcher = url => axios.get(url).then(res => res.data)
     console.log()
     const {id}= useParams();
-    const { data } = useSWR( `${process.env.REACT_APP_BASE_URL}/shop/${id}`, fetcher)
-
-   // let item = data.find(x => x.id === id)
-
+    const { data } = useSWR( `${process.env.REACT_APP_BASE_URL}/shop/${id}`, fetcher);
     return<>
 
-    <Link to="/">
-                <button type="button" className='back-button'>
-                    Back
-                    </button>
-                    </Link>
-                    
+  
         <NavBar/>
         
+        
         <div className="card-container">
+        
+                    
             <Heartbutton/>
             
             <img className="image-card" src={"https://enrobax.pythonanywhere.com/"+ data?.image}></img>
@@ -46,9 +41,14 @@ const Shop = () =>{
             <div className='box-products'>
             {data?.products.map((products) => (<li>{products.name}</li>))}
             </div>
-
+            <Link to="/" >
+                <button type="button" className='back-button' >
+                    Back
+                    </button>
+                    </Link>
             
             </div>
+            
 
     </>
 }
