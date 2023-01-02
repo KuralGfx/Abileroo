@@ -26,7 +26,7 @@ const Shop = () =>{
                     </Link>
                     
         <NavBar/>
-
+        
         <div className="card-container">
             <Heartbutton/>
             
