@@ -1,6 +1,6 @@
 import React from "react";
 
-import '../components/styles/nav.css'
+import '../styles/nav.css'
 
 const SearchInput = ({onChange}) => {
   

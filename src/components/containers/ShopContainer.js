@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import '../styles/cardbox.css'
 import React from 'react';
-import NavBar from "../NavBar";
+import NavBar from "../component/NavBar";
 import { Link, useParams } from "react-router-dom";
 import useSWR  from "swr";
 import axios from "axios";
+import Heartbutton from '../component/HeartButton';
 
 
 const Shop = () =>{
@@ -17,11 +18,20 @@ const Shop = () =>{
    // let item = data.find(x => x.id === id)
 
     return<>
-        <NavBar/>
-        <div className="card-container">
 
+    <Link to="/">
+                <button type="button" className='back-button'>
+                    Back
+                    </button>
+                    </Link>
+                    
+        <NavBar/>
+
+        <div className="card-container">
+            <Heartbutton/>
+            
             <img className="image-card" src={"https://enrobax.pythonanywhere.com/"+ data?.image}></img>
-        
+            
             <div className="title-card"><h1> {data?.name}</h1></div>
 
             <div className="Via-card"><h3>{data?.address}</h3></div>
@@ -37,11 +47,7 @@ const Shop = () =>{
             {data?.products.map((products) => (<li>{products.name}</li>))}
             </div>
 
-            <Link to="/">
-                <button type="button" className='back-button'>
-                    Back
-                    </button>
-                    </Link>
+            
             </div>
 
     </>

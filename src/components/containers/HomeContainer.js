@@ -2,13 +2,13 @@
 import {  useEffect, useState} from "react";
 import BoxContainer from "./BoxContainer";
 import '../styles/nav.css'
-import SearchInput from "../InputSearch";
-import NavDropDown from "../NavDropComponent";
-import NavBar from "../NavBar";
+import SearchInput from "../component/InputSearch";
+import NavDropDown from "../component/NavDropComponent";
+import NavBar from "../component/NavBar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useSWR  from "swr";
-import LikeButton from "../PreferButton";
+import LikeButton from "../component/PreferButton";
 
 
 const fetcher = url => axios.get(url).then(res => res.data)
@@ -40,28 +40,6 @@ export default function HomeContainer() {
         axios.get(`${process.env.REACT_APP_BASE_URL}/shops/${value}`)
                 .then((res)=> setResult(res.data));
     }
-
-   // switch(value){
-            
-        //     case "a-z":
-        //         axios.get(`${process.env.REACT_APP_BASE_URL}/shops/?ordering=name`)
-        //         .then((res)=> setResult(res.data))
-                
-        //     break;
-
-        //      case "z-a":
-        //         axios.get(`${process.env.REACT_APP_BASE_URL}/shops/?ordering=-name`)
-        //         .then((res)=> setResult(res.data))
-                
-        //      break;
-             
-        //      case "Casual":
-        //         axios.get(`${process.env.REACT_APP_BASE_URL}/shops/`)
-        //         .then((res)=> setResult(res.data))
-            
-        //     break;
-                   
-        // }
      
     useEffect(()=>{
         if(data!== null){

@@ -1,0 +1,11 @@
+.love-button{
+  
+    position: absolute;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    width: 98vw;
+    height: 6.7vh;
+    
+
+}

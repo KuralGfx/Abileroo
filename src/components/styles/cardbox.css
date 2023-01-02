@@ -46,13 +46,44 @@
 
  .back-button{
     color: rgb(255, 255, 255);
-    background-color: rgb(187, 100, 1);
-    margin-top: 20px;
-    margin-left: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    background-color: rgb(255, 136, 0);
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     border-radius: 8px;
-    height: 50px;
-    box-shadow: 0px 0px 7px rgb(255, 255, 255) ;
+    height: 35px;
+    position: absolute;
+    margin-left: 94%; 
+    align-items: center;
    
+ }
+
+ @media screen and (max-width: 1090px) {
+   .back-button{
+      color: rgb(255, 255, 255);
+      background-color: rgb(255, 136, 0);
+      margin-top: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
+      border-radius: 8px;
+      height: 35px;
+      position: absolute;
+      margin-left: 87%; 
+     
+   }
+ }
+
+ @media screen and (max-width: 500px) {
+   .back-button{
+      color: rgb(255, 255, 255);
+      background-color: rgb(255, 136, 0);
+      margin-top: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
+      border-radius: 8px;
+      height: 35px;
+      position: absolute;
+      margin-left: 80%; 
+     
+   }
  }
