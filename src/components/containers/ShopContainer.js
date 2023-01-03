@@ -17,13 +17,13 @@ const Shop = () =>{
     return<>
 
   
-        <NavBar/>
+        <NavBar key={NavBar}/>
         
         
         <div className="card-container">
         
                     
-            <Heartbutton/>
+            <Heartbutton data={data}/>
             
             <img className="image-card" src={"https://enrobax.pythonanywhere.com/"+ data?.image}></img>
             
@@ -39,7 +39,7 @@ const Shop = () =>{
             <div className="title-products"><h1>Prodotti</h1></div>
 
             <div className='box-products'>
-            {data?.products.map((products) => (<li>{products.name}</li>))}
+            {data?.products.map((products, index) => (<li key={index}>{products.name}</li>))}
             </div>
             <Link to="/" >
                 <button type="button" className='back-button' >

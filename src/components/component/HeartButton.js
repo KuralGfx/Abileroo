@@ -2,31 +2,64 @@ import React, { useEffect } from "react";
 import '../styles/heartbutton.css'
 import { useState } from 'react';
 import { HeartSwitch } from '@anatoliygatt/heart-switch';
-import useSWR  from "swr";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-export default function Heartbutton(){
-
-  const fetcher = url => axios.get(url).then(res => res.data)
-    console.log()
-    const {id}= useParams();
-    const { data } = useSWR( `${process.env.REACT_APP_BASE_URL}/shop/${id}`, fetcher);
+import  _ from 'lodash'
+export default function Heartbutton({data}){
 
 
-  const [checked, setChecked] = useState("");
-
-  useEffect(() => {
-    const checked = localStorage.getItem('conferma');
-
-    //const remove = JSON.parse(localStorage.getItem('conferma'));
-
-    localStorage.setItem("negozio", JSON.stringify(checked));
-  },
   
-  [checked]);
+  const [checked, setChecked] = useState(false);
+  const onClick = (event) => {
+    setChecked(event.target.checked);
 
+    if(event.target.checked === true && data != null){
+      const negozio = JSON.parse( localStorage.getItem('negozio') );
 
-  console.log(checked)
+      if(negozio !==null ){
+      
+        const arrayPreferiti =_.concat([],negozio,data)
+        localStorage.setItem('negozio', JSON.stringify(arrayPreferiti));
+        console.log(arrayPreferiti)
+        
+      }
+      else{
+        localStorage.setItem('negozio', JSON.stringify([data]));
+      }      
+    }
+    
+    else if (event.target.checked === false){
+        const negozio = JSON.parse( localStorage.getItem('negozio') );
+        console.log(negozio[negozio.length-1].id);
+        const negozio_agg = negozio.filter((data)=>{return negozio[negozio.length-1].id !== data.id });
+        console.log(negozio_agg);
+        localStorage.setItem('negozio', JSON.stringify(negozio_agg)); 
+      }
+  }
+
+ 
+useEffect(()=>{
+    let negozio = JSON.parse( localStorage.getItem('negozio'));
+
+    const contr = ()=>{
+     let cont = 0;
+     if(data && negozio){
+      console.log(data.id)
+      for(let i = 0 ; i<negozio.length; i++){
+        if (negozio[i].id === data.id){
+          cont +=1;
+        }
+      }
+      if (cont > 0){
+        return true;
+      }return false;
+     }
+    }
+    
+    setChecked(contr)
+    
+//verificare se all interno array negozi è presente data se e presente setcheck ture o false
+    
+    
+  },[data]);
   
   
   
@@ -38,7 +71,8 @@ export default function Heartbutton(){
         checked={checked}
         
         onChange={(event) => {
-          setChecked(event.target.checked);
+          
+          onClick(event)
         
         }}
       />
