@@ -49,13 +49,17 @@ export default function HomeContainer() {
     const handleOrder = (option) => {
     
         setSelected(option.label);
+
         if(viewPrefer===false){
         axios.get(`${process.env.REACT_APP_BASE_URL}/shops/${option.value}`)
                 .then((res)=> setResult(res.data));}
+
         else if(viewPrefer){
-            console.log(option)
+           
             if(option.label ==="a-z"){setResult(result.sort((a, b) => (a.name > b.name) ? 1 : -1))}
+
             else if(option.label ==="z-a"){setResult(result.sort((a, b) => (a.name < b.name) ? 1 : -1))}
+            
             else if(option.label ==="Per nome"){setResult(JSON.parse( localStorage.getItem('negozio') ))}
         }
     }
