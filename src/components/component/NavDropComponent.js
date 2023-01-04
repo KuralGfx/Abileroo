@@ -24,7 +24,7 @@ export default function NavDropDown({handleOrder, selected}){
                      <div className="dropdown-content">
                         {options.map((option) =>(
                             <div onClick={() => {
-                                handleOrder(option.value)
+                                handleOrder(option)
                                 setIsActive(false)
                             
                             }}

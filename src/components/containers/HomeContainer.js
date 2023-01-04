@@ -29,8 +29,6 @@ export default function HomeContainer() {
         
     }
 
-  
-
     const onClickOption =(id) =>{
         navigate(`/shop/${id}`, { replace: true })
     }
@@ -44,11 +42,11 @@ export default function HomeContainer() {
        
     }
 
-    const handleOrder = (value) => {
+    const handleOrder = (option) => {
     
-        setSelected(selected);
+        setSelected(option.label);
        
-        axios.get(`${process.env.REACT_APP_BASE_URL}/shops/${value}`)
+        axios.get(`${process.env.REACT_APP_BASE_URL}/shops/${option.value}`)
                 .then((res)=> setResult(res.data));
     }
      
@@ -66,23 +64,23 @@ export default function HomeContainer() {
             } else{
                 setResult(data)
             }
-        },[viewPrefer])
+        },[data, viewPrefer])
 
     return (
 
         <div>
 
-            <ButtonPrefer onClick={()=>onClickPrefer()} boh={viewPrefer ? "nascondi preferti" : "mostra preferiti"}/>
-          
+            <ButtonPrefer onClick={()=>onClickPrefer()} label={viewPrefer ? "Nascondi preferti" : "Mostra preferiti"}/>
+
+            <div className="container-drop">
+                <NavDropDown   handleOrder={handleOrder} selected={selected} />
+                </div>
 
             <NavBar/>
             
             <SearchInput onChange={handleSearch}/>
             
-                <div className="container-drop">
-                <NavDropDown   handleOrder={handleOrder} selected={selected} />
                 
-                </div>
              
                 {result?.map((item) => (
                 <BoxContainer key={item.id} title={item.name} onClick= {()=> onClickOption(item.id)} />
