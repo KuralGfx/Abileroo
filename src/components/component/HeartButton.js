@@ -36,15 +36,15 @@ export default function Heartbutton({data}){
 
  
 useEffect(()=>{
-    let negozio = JSON.parse( localStorage.getItem('negozio'));
-    console.log(negozio)
+    let Shop = JSON.parse( localStorage.getItem('negozio'));
+    console.log(Shop)
 
     const contr = ()=>{
      let cont = 0;
-     if(data && negozio){
+     if(data && Shop){
       console.log(data.id)
-      for(let i = 0 ; i<negozio.length; i++){
-        if (negozio[i].id === data.id){
+      for(let i = 0 ; i<Shop.length; i++){
+        if (Shop[i].id === data.id){
           cont +=1;
         }
       }
