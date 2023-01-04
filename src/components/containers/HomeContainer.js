@@ -18,9 +18,28 @@ export default function HomeContainer() {
     const[selected, setSelected] = useState()
     const [result, setResult] = useState();
     const navigate = useNavigate();
+    const [ viewPrefer, setViewPrefer] = useState(false);
 
+   
+    
     const { data } = useSWR( `${process.env.REACT_APP_BASE_URL}/shops/`, fetcher)
-  
+    
+    const onClickPrefer = ()=>{
+        setViewPrefer(!viewPrefer);
+        
+    }
+
+    useEffect(
+        ()=>{
+            if (viewPrefer){
+                const negozio = JSON.parse( localStorage.getItem('negozio') ) ;
+                setResult(negozio)
+            } else{
+                setResult(data)
+            }
+        }
+    )
+
     const onClickOption =(id) =>{
         navigate(`/shop/${id}`, { replace: true })
     }
@@ -52,19 +71,23 @@ export default function HomeContainer() {
 
         <div>
 
-            <ButtonPrefer/>
+            <ButtonPrefer onClick={()=>onClickPrefer()} boh={viewPrefer ? "nascondi preferti" : "mostra preferiti"}/>
+          
 
             <NavBar/>
             
             <SearchInput onChange={handleSearch}/>
             
                 <div className="container-drop">
-                <NavDropDown  handleOrder={handleOrder} selected={selected} />
+                <NavDropDown   handleOrder={handleOrder} selected={selected} />
                 
                 </div>
              
                 {result?.map((item) => (
-                <BoxContainer key={item.id} title={item.name} onClick= {()=> onClickOption(item.id) }/>))}
+                <BoxContainer key={item.id} title={item.name} onClick= {()=> onClickOption(item.id)} />
+                )
+             )
+        }
                 
         </div>
     );

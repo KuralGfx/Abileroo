@@ -1,34 +1,26 @@
 import React, { Component } from 'react';
 import '../styles/buttonpref.css';
 
-class ButtonPrefer extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-          liked: false
-        };
-        this.handleClick = this.handleClick.bind(this);
-      } 
+function ButtonPrefer(props) {
+  const {onClick} = props;
+  let liked = false;
+  const label = liked ? 'Nascondi Preferiti' : 'Mostra Preferiti'
       
-      handleClick() {
-        this.setState({
-          liked: !this.state.liked
-        });
-      }
+     
       
-      render() {
+      return (
        
-        const label = this.state.liked ? 'Nascondi Preferiti' : 'Mostra Preferiti'
-        return (
+      
           
-            <button className="button-pref" onClick={this.handleClick}>
-              {label}</button>
+            <button className="button-pref" onClick={onClick} >
+              {props.boh}</button>
           
-         
-        );
-      }
-    }
+       
+      
+    );
+
+  }
 
 
 export default ButtonPrefer;

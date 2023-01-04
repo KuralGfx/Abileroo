@@ -18,7 +18,6 @@ export default function Heartbutton({data}){
       
         const arrayPreferiti =_.concat([],negozio,data)
         localStorage.setItem('negozio', JSON.stringify(arrayPreferiti));
-        console.log(arrayPreferiti)
         
       }
       else{
@@ -38,6 +37,7 @@ export default function Heartbutton({data}){
  
 useEffect(()=>{
     let negozio = JSON.parse( localStorage.getItem('negozio'));
+    console.log(negozio)
 
     const contr = ()=>{
      let cont = 0;
