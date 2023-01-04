@@ -29,16 +29,7 @@ export default function HomeContainer() {
         
     }
 
-    useEffect(
-        ()=>{
-            if (viewPrefer){
-                const negozio = JSON.parse( localStorage.getItem('negozio') ) ;
-                setResult(negozio)
-            } else{
-                setResult(data)
-            }
-        }
-    )
+  
 
     const onClickOption =(id) =>{
         navigate(`/shop/${id}`, { replace: true })
@@ -66,6 +57,16 @@ export default function HomeContainer() {
             setResult(data)
         }  
     },[data])
+
+    useEffect(
+        ()=>{
+            if (viewPrefer){
+                const negozio = JSON.parse( localStorage.getItem('negozio') ) ;
+                setResult(negozio)
+            } else{
+                setResult(data)
+            }
+        },[viewPrefer])
 
     return (
 

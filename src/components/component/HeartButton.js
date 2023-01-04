@@ -26,12 +26,12 @@ export default function Heartbutton({data}){
     }
     
     else if (event.target.checked === false){
-        const negozio = JSON.parse( localStorage.getItem('negozio') );
-        console.log(negozio[negozio.length-1].id);
-        const negozio_agg = negozio.filter((data)=>{return negozio[negozio.length-1].id !== data.id });
-        console.log(negozio_agg);
-        localStorage.setItem('negozio', JSON.stringify(negozio_agg)); 
-      }
+      const negozio = JSON.parse( localStorage.getItem('negozio') );
+      console.log(negozio[negozio.length-1].id);
+      const negozio_agg = negozio.filter((data)=>{return negozio[negozio.length-1].id !== data.id });
+      console.log(negozio_agg);
+      localStorage.setItem('negozio', JSON.stringify(negozio_agg)); 
+    }
   }
 
  
