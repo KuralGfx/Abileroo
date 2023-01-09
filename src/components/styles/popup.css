@@ -1,0 +1,65 @@
+
+.c-iner{
+    background-color: rgba(0, 0, 0, 0.384);
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+.popup{
+    height: 90%;
+    width: 90%;
+    background-color:  rgb(255, 136, 0);
+    background-image: url('https://cdn.discordapp.com/attachments/963899883201388594/1053401587206328410/ABILEROO.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 27px 2px black;
+    position: absolute;
+    top: 5%;
+    border-radius: 6px;
+    animation-name: example;
+    animation-duration: 1s;
+    
+}
+.popup-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px 0 15px;
+    color: black;
+}
+.btn-view{
+    color: rgb(255, 255, 255);
+   background-color: rgb(255, 136, 0);
+   
+   position: absolute;
+   text-align: center;
+   
+   border-radius: 100px;
+   margin-top: 110px;
+   
+   height: 65px;
+   width: 70%;  
+}
+
+
+@keyframes example {
+    0%   {width: 0%; height: 0%}    
+    90%  {width: 90%}
+} 
+
+p{
+    color: black;
+    padding: 6%;
+    animation-name: boh;
+    animation-duration: 1.6s;
+}
+
+@keyframes boh {
+    0%   {color: transparent;}  
+    50%   {color: transparent;}    
+    100%  {color: black;}
+} 
