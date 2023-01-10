@@ -1,6 +1,10 @@
 import React, { useState }  from "react";
 import "../styles/popup.css"
 import { useEffect }  from "react";
+import Basic from "../component/RepComponent";
+
+
+
 
 function PopUp(){
     const [popup,setPop]=useState(false)
@@ -13,35 +17,28 @@ function PopUp(){
     useEffect(()=>{
         document.addEventListener("keyup",(e)=>{
             console.log(e.code,"key")
-            if(e.code=="Enter"){
+            if(e.code==="Enter"){
                 setPop(true)
             }
-            else if(e.code=="ShiftLeft"){
+            else if(e.code==="ShiftLeft"){
                 setPop(false)
             }
         })
     })
     return(
         <div>
-            <button className="btn-view" onClick={handleClickOpen}>Compra</button>
+            <button className="btn-view" onClick={handleClickOpen}>Completa l'acquisto</button>
             <div>
                 {
                     popup?
                     <div className="c-iner">
                         <div className="popup">
                             <div className="popup-header">
-                                <h1>Riepilogo</h1>
+                                <h1> </h1>
                                 <h1 onClick={closePopup}>X</h1>
                             </div>
-
-
-
-                            
-
-
-
+                            <Basic/>
                             <div>
-                            <p></p>
                             </div>
                         </div>
                     </div>:""

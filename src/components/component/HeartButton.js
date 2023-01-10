@@ -27,9 +27,9 @@ export default function Heartbutton({data}){
     
     else if (event.target.checked === false){
       const negozio = JSON.parse( localStorage.getItem('negozio') );
-      console.log(negozio[negozio.length-1].id);
+      
       const negozio_agg = negozio.filter((data)=>{return negozio[negozio.length-1].id !== data.id });
-      console.log(negozio_agg);
+      
       localStorage.setItem('negozio', JSON.stringify(negozio_agg)); 
     }
   }
@@ -37,12 +37,12 @@ export default function Heartbutton({data}){
  
 useEffect(()=>{
     let Shop = JSON.parse( localStorage.getItem('negozio'));
-    console.log(Shop)
+    
 
     const contr = ()=>{
      let cont = 0;
      if(data && Shop){
-      console.log(data.id)
+      
       for(let i = 0 ; i<Shop.length; i++){
         if (Shop[i].id === data.id){
           cont +=1;

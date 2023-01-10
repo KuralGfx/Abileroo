@@ -1,6 +1,6 @@
 
 .c-iner{
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgba(0, 0, 0, 0.527);
     height: 100%;
     width: 100%;
     position:absolute;
@@ -11,15 +11,14 @@
     
 }
 .popup{
-    height: 90%;
+    height: 59%;
     width: 90%;
-    background-color:  rgb(255, 136, 0);
-    background-image: url('https://cdn.discordapp.com/attachments/963899883201388594/1053401587206328410/ABILEROO.png');
+    background-color:  rgb(255, 123, 0);
     background-repeat: no-repeat;
     background-position: center;
-    box-shadow: 0 0 27px 2px black;
+    box-shadow: 0 0 27px 2px rgb(255, 123, 0);
     position: absolute;
-    top: 5%;
+    top: 30%;
     border-radius: 6px;
     animation-name: example;
     animation-duration: 1s;
