@@ -2,11 +2,12 @@ import React, { useState }  from "react";
 import "../styles/popup.css"
 import { useEffect }  from "react";
 import Basic from "../component/RepComponent";
+import { values } from "lodash";
 
 
 
 
-function PopUp(){
+function PopUp({onSubmit}){
     const [popup,setPop]=useState(false)
     const handleClickOpen=()=>{
         setPop(!popup)
@@ -16,7 +17,7 @@ function PopUp(){
     }
     useEffect(()=>{
         document.addEventListener("keyup",(e)=>{
-            console.log(e.code,"key")
+            
             if(e.code==="Enter"){
                 setPop(true)
             }
@@ -37,7 +38,7 @@ function PopUp(){
                                 <h1> </h1>
                                 <h1 onClick={closePopup}>X</h1>
                             </div>
-                            <Basic/>
+                            <Basic onSubmit={onSubmit}/>
                             <div>
                             </div>
                         </div>

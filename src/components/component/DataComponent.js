@@ -10,6 +10,7 @@ function DataPicker() {
     
       const handleChange = (newValue) => {
         setValue(newValue);
+        
       };
 
     return (

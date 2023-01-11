@@ -4,28 +4,23 @@ import { Formik, Field, Form } from 'formik';
 import "../styles/recap.css"
 import DataPicker from './DataComponent';
 
-const Basic = () => (
+const Basic = ({onSubmit}) => (
 
   <div>
    
     <Formik
+    
       initialValues={{
        
       }}
-      onSubmit={async (values) => {
-        await new Promise((r) => setTimeout(r, 500));
-        alert(JSON.stringify(values, null, 2));
-      }}
+      onSubmit={(values) => {onSubmit(values)}}
     >
       
      <Grid container spacing={0} className="c-rep">
-     <Grid item xs={4} className='gf' id="list_product">
+     {/* <Grid item xs={4} className='gf' id="list_product">
      <h1 className='cf-rep'>Prodotti</h1>
     
-   
-    
-      {/* mettere prodotti aggiunti */}
-    </Grid>
+    </Grid> */}
         <Form >
 
       <Grid item xs={8} className='gf' >
@@ -44,11 +39,8 @@ const Basic = () => (
         className="label-btn"
       />
     </Grid>
-
-    
-
     <Grid item xs={8} className='gf'>
-    <DataPicker/>
+    <DataPicker />
     </Grid>
     
     <Grid item xs={8} className='gf'>

@@ -1,21 +1,9 @@
-
+import React from "react";
 import {useState} from "react";
 import "../styles/increment.css";
-// passare prodotto e funzione slavare quantia onclik
-
-// const obj = {amount: e.target.value, product: product.id}
-
-// if(viewPrefer===false){
-//   axios.get(`${process.env.REACT_APP_BASE_URL}/shops/${e.target.value, product}`)
-//   .then((res)=> setResult(res.data));}
-
 
 function IncDecCounter({item, handleCounter}){
 
-  // const obj = {
-  //   amount: 'e.target.value',
-  //   product: 'product.id',
-  // }
 
   const [num, setNum]= useState(0);
   const incNum =()=>{

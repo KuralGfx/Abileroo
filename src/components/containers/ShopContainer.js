@@ -16,22 +16,39 @@ const Shop = () =>{
     const fetcher = url => axios.get(url).then(res => res.data)
     const {id}= useParams();
     const { data } = useSWR( `${process.env.REACT_APP_BASE_URL}/shop/${id}`, fetcher);
-    const[list, setlist] = useState([]); 
+    const onSubmit = (values) =>{
+       console.log(values)
+    } ;
+    const[list, setlist] = useState([]);
+    
     const handleCounter = (quantity, product) =>{
         const array = list ;
-        array.push({
-            "product": product.id,
-            "amount": quantity
-        } 
-        
-        )
-        //se l id del prodotto non e presente all interno dell array list allora faccio la push altrimenti vado a modificare l amount del prodotto
+        let num = 0; 
+        for(let i = 0; i < array.length; i++){
+            if(array[i].product === product.id){
+                num = num+1
+            }
+        }
+        if(num === 0){
+            array.push({
+                "product": product.id,
+                "amount": quantity
+            }
+            )
+        }
+        else{
+            for(let i = 0; i < array.length; i++){
+                if(array[i].product === product.id){
+                    array[i].amount = quantity
+                }
+            }
+        }  
+        console.log(num, 'dp')
         setlist(array);
-        
-        
+        console.log(array)
     };
+   
 
-    console.log('list',list)
     return<>
 
         <div className="card-container">
@@ -70,16 +87,13 @@ const Shop = () =>{
                 </Grid>
                 
                 </Grid>
-
-                
                 <Grid item xs={8}>
                 <div className='box-products'>
                 {data?.products.map((product, index) => (<li key={index}>{product.name}<IncDecCounter handleCounter={handleCounter} item={product}/></li>))}
                 </div>
                 </Grid>
-                
                 <Grid className='btn-container'>
-                <PopUp/>
+                <PopUp onSubmit={onSubmit}/>
                     </Grid>
                    
                 
