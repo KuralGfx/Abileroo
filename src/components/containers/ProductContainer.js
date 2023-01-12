@@ -2,7 +2,6 @@ import React, { useState }  from "react";
 import "../styles/popup.css"
 import { useEffect }  from "react";
 import Basic from "../component/RepComponent";
-import { values } from "lodash";
 
 
 

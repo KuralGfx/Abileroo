@@ -4,23 +4,22 @@ import { AdapterLuxon } from '@mui/x-date-pickers/AdapterLuxon';
 import { DateTime } from "luxon";
 import { useState } from 'react';
 import "../styles/recap.css"
-function DataPicker() {
+function DataPicker({value, setFieldValue}) {
 
-    const [value, setValue] = useState(DateTime.now());
     
       const handleChange = (newValue) => {
-        setValue(newValue);
-        
+        setFieldValue("birthdate_time_delivery", newValue, true)
+        console.log(value, "test")
       };
 
     return (
         
             <LocalizationProvider dateAdapter={AdapterLuxon}>
-        <DateTimePicker
-          value={value}
-          onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
-        />
+                <DateTimePicker
+                value={value}
+                onChange={handleChange}
+                renderInput={(params) => <TextField {...params} />}
+              />
       </LocalizationProvider>
       
     );
