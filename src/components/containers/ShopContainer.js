@@ -11,15 +11,24 @@ import IncDecCounter from '../component/IncDecCounter';
 import PopUp from './ProductContainer';
 
 
+
 const Shop = () =>{
     
     const fetcher = url => axios.get(url).then(res => res.data)
     const {id}= useParams();
+    const orderPost = (values) => axios.post(`${process.env.REACT_APP_BASE_URL}/order-create/`, (values));
+
     const { data } = useSWR( `${process.env.REACT_APP_BASE_URL}/shop/${id}`, fetcher);
-    const onSubmit = (values) =>{
-       console.log(values)
-    } ;
     const[list, setlist] = useState([]);
+    const onSubmit = (values) =>{
+        let data = values;
+        data.date_time_delivery = values.date_time_delivery.toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        data.details = list;
+        data.shop = id;
+        console.log(data)
+        orderPost(data)
+    } ;
+    
     
     const handleCounter = (quantity, product) =>{
         const array = list ;

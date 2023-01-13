@@ -8,7 +8,8 @@ function DataPicker({value, setFieldValue}) {
 
     
       const handleChange = (newValue) => {
-        setFieldValue("birthdate_time_delivery", newValue, true)
+        setFieldValue("date_time_delivery", newValue, true)
+        
         console.log(value, "test")
       };
 

@@ -1,7 +1,7 @@
 .c-rep{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .cf-rep{
@@ -43,7 +43,7 @@
 .gf{
     animation-name: gf;
   animation-duration: 4s;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 @keyframes gf {
