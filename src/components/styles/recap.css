@@ -1,8 +1,9 @@
-.c-rep{
+
+.cteiner{
     display: flex;
-    align-items: center;
     justify-content: flex-end;
 }
+
 
 .cf-rep{
     display: flex;
@@ -10,6 +11,7 @@
     justify-content: flex-end;
     padding-right: 30px;
     color: black;
+    
 }
 .button-by{
     background-color: rgb(0, 0, 0);
@@ -27,36 +29,48 @@
 .label-btn{
     border: transparent;
     height: 30px;
-    border-radius: 10px;
+    box-shadow: 0 0 12px 2px white;
     background-color: rgb(255, 255, 255);
     margin-top: 10px;
     
     
 }
 
+
+
 .h4{
     color: black;
     margin-top: 10px;
+    animation-name: gf;
+  animation-duration: 4s;
     
 }
-
+.picker{
+    background-color: white;
+    box-shadow: 0 0 12px 2px white;
+}
 .gf{
     animation-name: gf;
   animation-duration: 4s;
   padding-top: 10px;
+  padding-right: 40px;
+  
 }
 
 .gfd{
     animation-name: gf;
   animation-duration: 4s;
-  padding-top: 29px;
-  padding-right: 10px;
+  padding-top: 9px;
+  padding-right: 30px;
+  
 }
 
 .gfc{
     animation-name: gf;
   animation-duration: 4s;
   padding-top: 70px;
+  padding-right: 40px;
+  
 }
 
 @keyframes gf {

@@ -18,7 +18,7 @@ const Basic = ({onSubmit}) => (
         /* and other goodies */
       }) => (
         
-          <Grid container spacing={0} className="c-rep">
+            <Grid container spacing={0} className="cteiner">
             <form onSubmit={handleSubmit}>
             <Grid item xs={8} className='gf' >
               <h1 className='h4'>Dati Ordine</h1>
@@ -41,14 +41,18 @@ const Basic = ({onSubmit}) => (
                 
 
                 </Grid>
+                <label htmlFor="client_email" className='h4'>Data e ora consegna</label>
                 <Grid item xs={8} className='gfd'>
+                
                   <DataPicker value={values.date_time_delivery} setFieldValue={setFieldValue} />
                   </Grid>
                   <Grid item xs={8} className='gfc'>
                     <button type="submit" className='button-by'>Compra</button>
                     </Grid>
                     </form>
-          </Grid>
+            </Grid>
+            
+       
         
       )}
     </Formik>

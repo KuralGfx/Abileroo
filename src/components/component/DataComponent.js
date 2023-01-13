@@ -1,8 +1,6 @@
 import { TextField } from '@mui/material';
 import { DateTimePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterLuxon } from '@mui/x-date-pickers/AdapterLuxon';
-import { DateTime } from "luxon";
-import { useState } from 'react';
 import "../styles/recap.css"
 function DataPicker({value, setFieldValue}) {
 
@@ -19,7 +17,7 @@ function DataPicker({value, setFieldValue}) {
                 <DateTimePicker
                 value={value}
                 onChange={handleChange}
-                label="Dara e Ora consegna"
+                className='picker'
                 renderInput={(params) => <TextField {...params} />}
               />
       </LocalizationProvider>
