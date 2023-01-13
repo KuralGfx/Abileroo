@@ -19,6 +19,7 @@ function DataPicker({value, setFieldValue}) {
                 <DateTimePicker
                 value={value}
                 onChange={handleChange}
+                label="Dara e Ora consegna"
                 renderInput={(params) => <TextField {...params} />}
               />
       </LocalizationProvider>
